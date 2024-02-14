@@ -48,6 +48,9 @@ Naive Brute Force Optimal Bin Packing Algorithm.
    are excluded from the array. To reduce runtimes, try removng the k smallest elements,
    without reducing the number of starting bins, then try to fit them manually into an
    optimal bin packing solution of the remaining n-k items.
+   
+   Faster exhaustive search algorithms exist, but they are more complicated, and less 
+   obviously must produce optimal solutions.
 */
 
 function initpacking($itemcount) {
