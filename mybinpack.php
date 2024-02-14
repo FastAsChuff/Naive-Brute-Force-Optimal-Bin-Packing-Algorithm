@@ -44,7 +44,10 @@ Naive Brute Force Optimal Bin Packing Algorithm.
    complexity means that it is easy to create problems that would have runtimes longer than the age of the universe. 
    However, runtimes for small b and n may be acceptable. 
    
-   It is recommended that items which must be put in their own bins, where itemsize + minitemsize > bincapacity, are excluded from the array. To reduce runtimes, try removng the k smallest elements, without reducing the number of starting bins, then try to fit them manually into an optimal bin packing solution of the remaining n-k items.
+   It is recommended that items which must be put in their own bins, where itemsize + minitemsize > bincapacity, 
+   are excluded from the array. To reduce runtimes, try removng the k smallest elements,
+   without reducing the number of starting bins, then try to fit them manually into an
+   optimal bin packing solution of the remaining n-k items.
 */
 
 function initpacking($itemcount) {
