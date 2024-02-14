@@ -130,7 +130,18 @@ function packbins($itemsizes, $bincapacity) {
 //$itemsizes = [12, 7, 6, 2, 2]; // 2 (time = 47ms)
 //$itemsizes = [16, 2, 2, 18, 18, 4]; // 3 (time = 47ms)
 //$itemsizes = [13, 5, 6, 11, 15, 11, 19, 12, 7, 18]; // 6->7 (time = 75s)
-$itemsizes = [13, 5, 6, 11, 15, 11, 12, 7]; // 4->5 (time = 80ms)
+//$itemsizes = [13, 5, 6, 11, 15, 11, 12, 13, 8, 7, 7, 1, 2, 5, 2, 2]; 
+/*
+Manually added 1,2,2,2.
+[13 5 2]
+[12 6 2]
+[11 7 2]
+[11 8 1]
+[5 15]
+[13 7]
+*/
+$itemsizes = [13, 5, 6, 11, 15, 11, 12, 13, 8, 7, 7, 5]; // 6 (time = 70s)
+
 $bincapacity = 20;
 $packing = packbins($itemsizes, $bincapacity);
 ?>
