@@ -279,17 +279,19 @@ int main(int argc, char**argv) {
     if ((mstimeout == 0) || ((mstimeout >= 50ULL) && (mstimeout <= 1000000000000ULL))) {
       if (argc > 2) {
         bincapacity = atoi(argv[2]);
-        itemscount = argc-3;
-        if (itemscount <= 1000) {
-          if (obpp_init(&packing, mstimeout, bincapacity, itemscount)) {
-            for (i=3; i<argc; i++) {
-              element = atoi(argv[i]);
-              if ((element == 0) || (element > bincapacity) || !obpp_additem(&packing, element)) {
-                obpp_free(&packing);
-                break;
+        if (bincapacity <= 1000000) {
+          itemscount = argc-3;
+          if (itemscount <= 1000) {
+            if (obpp_init(&packing, mstimeout, bincapacity, itemscount)) {
+              for (i=3; i<argc; i++) {
+                element = atoi(argv[i]);
+                if ((element == 0) || (element > bincapacity) || !obpp_additem(&packing, element)) {
+                  obpp_free(&packing);
+                  break;
+                }
               }
+              if (i == argc) validargs = true;
             }
-            if (i == argc) validargs = true;
           }
         }
       }
